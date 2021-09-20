@@ -1,0 +1,84 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{charter}
+\usepackage[charter,cal=cmcal]{mathdesign}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newcommand{\inn}[1]{\langle #1 \rangle}
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\setlength\parindent{0pt}
+
+\newcommand{\claim}{\textit{Claim. }}
+
+\begin{document}
+
+\begin{center}
+    \section*{Example Epsilon-Delta Proof - Anatoly Zavyalov}
+\end{center}
+
+Suppose we want to prove the statement, for some \(a \in \mathbb{R}\),
+\[
+    \lim_{x \to a} x^2 = a^2.
+\]
+
+Equivalently, we want to show that
+\[
+    \forall \epsilon > 0, \exists \delta > 0: \forall x \in \mathbb{R}, |x-a| < \delta \implies \left| x^2 - a^2 \right| < \epsilon. 
+\]
+
+\begin{proof}[Proof]
+    
+
+Let \(\epsilon > 0\) be given.
+
+Let \(\delta = \displaystyle \min \left\{ 1, \frac{\epsilon}{2|a| + 1} \right\} \).
+
+Let \(x \in \mathbb{R}\), and suppose that \(|x-a| < \delta\).
+
+We know that \(|x|-|a| < |x-a|\) by the triangle inequality, so
+\begin{align*}
+    &|x|-|a| < |x-a| < \delta \\ 
+    \implies& |x| < |a| + \delta \\ 
+    \implies& |x| < |a| + \delta < |a| + 1 \tag*{as \(\delta < 1\)} \\ 
+    \implies& |x| < |a| + 1.
+\end{align*}
+
+Next, we know
+\begin{align*}
+    &\delta < \frac{\epsilon}{2 |a| + 1} \\ 
+    \implies& \delta \left( 2|a| + 1 \right) = \delta \left( |a| + |a| + 1 \right) < \epsilon \\ 
+    \implies& \delta \left( |x| + |a| \right) < \delta \left( |a| + |a| + 1 \right) < \epsilon \\ 
+    \implies& \delta \left( |x+a| \right) < \delta \left( |x| + |a| \right) < \epsilon \tag*{by the triangle inequality}\\ 
+    \implies& |x-a||x+a| < \epsilon \tag*{as \(|x-a| < \delta\)} \\ 
+    \implies& |x^2 - a^2| < \epsilon,
+\end{align*}
+
+as desired.
+
+Since \(x \in \mathbb{R}\) was chosen arbitrarily, we know that
+\[
+    \forall x \in \mathbb{R}, |x-a| < \delta \implies \left| x^2 - a^2 \right| < \epsilon.
+\]
+
+Hence,
+\[
+    \exists \delta > 0: \forall x \in \mathbb{R}, |x-a| < \delta \implies \left| x^2 - a^2 \right| < \epsilon.
+\]
+
+Since \(\epsilon > 0\) was also chosen arbitrarily, we know that
+\[
+    \forall \epsilon > 0, \exists \delta > 0: \forall x \in \mathbb{R}, |x-a| < \delta \implies \left| x^2 - a^2 \right| < \epsilon,
+\]
+
+which is what we wanted to show.
+
+
+\end{proof}
+
+\end{document}
