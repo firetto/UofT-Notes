@@ -35,13 +35,7 @@ Equivalently, we want to show that
 \begin{proof}[Proof]
     
 
-Let \(\epsilon > 0\) be given.
-
-Let \(\delta = \displaystyle \min \left\{ 1, \frac{\epsilon}{2|a| + 1} \right\} \).
-
-Let \(x \in \mathbb{R}\), and suppose that \(|x-a| < \delta\).
-
-We know that \(|x|-|a| < |x-a|\) by the triangle inequality, so
+Let \(\epsilon > 0\) be given. Let \(\delta = \displaystyle \min \left\{ 1, \frac{\epsilon}{2|a| + 1} \right\} \). Let \(x \in \mathbb{R}\), and suppose that \(|x-a| < \delta\). We know that \(|x|-|a| < |x-a|\) by the triangle inequality, so
 \begin{align*}
     &|x|-|a| < |x-a| < \delta \\ 
     \implies& |x| < |a| + \delta \\ 
@@ -59,9 +53,7 @@ Next, we know
     \implies& |x^2 - a^2| < \epsilon,
 \end{align*}
 
-as desired.
-
-Since \(x \in \mathbb{R}\) was chosen arbitrarily, we know that
+as desired. Since \(x \in \mathbb{R}\) was chosen arbitrarily, we know that
 \[
     \forall x \in \mathbb{R}, |x-a| < \delta \implies \left| x^2 - a^2 \right| < \epsilon.
 \]
